@@ -35,12 +35,12 @@ const Nuevo = ({alumnos, manejarAlumno}) => {
         setAlumno((prev) => ({...prev, [name]: value }));
     };
 
-    const handleSubmit = (alumno) => {
-        alumno.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-
-        if(alumnos.includes(alumno.lu)) 
+        if (alumnos.some(a => a.lu === alumno.lu)) 
             alert('El LU ya existe');
+        
         else{
         manejarAlumno(alumno);
         setAlumno({
@@ -54,7 +54,7 @@ const Nuevo = ({alumnos, manejarAlumno}) => {
             telefono: '',
             domicilio: '',
         });
-        navigate(-1);
+        navigate("/alumnos");
         }
        
     };
