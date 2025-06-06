@@ -27,8 +27,40 @@ const AcercaDe = () => {
         </p>
         <p><strong>Edad:</strong> 37 años</p>
       </div>
-
-    </div>
+      <div className="integrante">
+        <p><strong>Apellido y Nombre:</strong>Duran, Josue Alejandro</p>
+        <p><strong>DNI:</strong> 45327596</p>
+        <p>
+          <strong>Instagram:</strong>{" "}
+          <a href="https://www.instagram.com/_its.j.duran_?igsh=aDEybXoyZDY5amZp" target="_blank" rel="noopener noreferrer">
+            @_its.j.duran_
+          </a>
+        </p>
+        <p><strong>Edad:</strong> 21 años</p>
+      </div>
+      <div className="integrante">
+        <p><strong>Apellido y Nombre:</strong>Flores, Ricardo Julián</p>
+        <p><strong>DNI:</strong> 45763542</p>
+        <p>
+          <strong>Instagram:</strong>{" "}
+          <a href="https://www.instagram.com/fricardo21/" target="_blank" rel="noopener noreferrer">
+            @fricardo21
+          </a>
+        </p>
+        <p><strong>Edad:</strong> 21 años</p>
+      </div>
+      <div className="integrante">
+        <p><strong>Apellido y Nombre:</strong> Vazquez, Carlos Gabriel</p>
+        <p><strong>DNI:</strong> 45327578</p>
+        <p>
+          <strong>Instagram:</strong>{" "}
+          <a href="https://www.instagram.com/carlos.vazquez._/" target="_blank" rel="noopener noreferrer">
+            @carlos.vazquez._
+          </a>
+        </p>
+        <p><strong>Edad:</strong> 21 años</p>
+      </div>
+      </div>
   );
 };
 export default AcercaDe;
