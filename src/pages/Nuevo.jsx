@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 
-const Nuevo = ({alumnos, editarAlumnos}) => {
+const Nuevo = ({alumnos, onChange}) => {
     const { id } = useParams();
     const nuevoid = useMemo(() => {
 
@@ -29,7 +29,7 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
     }, [id]);
 
 
-    const editarAlumnos = (alumno) => {
+    const onChange = (alumno) => {
         const { name, value } = alumno.target;
         setAlumno((prev) => ({...prev, [name]: value }));
     };
@@ -41,7 +41,7 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
         if(alumnos.map((alumno) => alumno.lu).includes(alumnos.lu)) 
             alert('El LU ya existe');
         else{
-        editarAlumnos(alumnos);
+        onChange(alumnos);
         setAlumno({
             id: nuevoid,
             lu: '',
@@ -62,14 +62,14 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <h2>{id ? 'Editar Alumno' : 'Nuevo Alumno'}</h2>
-                <label>Nombre: <imput type="text" name="nombre" value={alumno.nombre} onchange={editarAlumnos} required/></label>
-                <label>Apellido: <imput type="text" name="apellido" value={alumno.apellido} onchange={editarAlumnos} required/></label>
-                <label>Lu: <imput type="text" name="lu" value={alumno.lu} onchange={editarAlumnos} required/></label>
-                <label>Edad: <imput type="number" name="edad" value={alumno.edad} onchange={editarAlumnos} required/></label>
-                <label>Curso: <imput type="text" name="curso" value={alumno.curso} onchange={editarAlumnos} required/></label>
-                <label>Email: <imput type="email" name="email" value={alumno.email} onchange={editarAlumnos} required/></label>
-                <label>Domicilio: <imput type="text" name="domicilio" value={alumno.domicilio} onchange={editarAlumnos} required/></label>
-                <label>Telefono: <imput type="tel" name="telefono" value={alumno.telefono} onchange={editarAlumnos} required/></label>
+                <label>Nombre: <input type="text" name="nombre" value={alumno.nombre} onChange={onChange} required/></label>
+                <label>Apellido: <input type="text" name="apellido" value={alumno.apellido} onChange={onChange} required/></label>
+                <label>Lu: <input type="text" name="lu" value={alumno.lu} onChange={onChange} required/></label>
+                <label>Edad: <input type="number" name="edad" value={alumno.edad} onChange={onChange} required/></label>
+                <label>Curso: <input type="text" name="curso" value={alumno.curso} onChange={onChange} required/></label>
+                <label>Email: <input type="email" name="email" value={alumno.email} onChange={onChange} required/></label>
+                <label>Domicilio: <input type="text" name="domicilio" value={alumno.domicilio} onChange={onChange} required/></label>
+                <label>Telefono: <input type="tel" name="telefono" value={alumno.telefono} onChange={onChange} required/></label>
                 <div>
                     <button type="submit">Guardar</button>
                     <button><Link to={`/alumnos`}>Atras</Link>    </button>
