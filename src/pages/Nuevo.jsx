@@ -11,7 +11,7 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
     }, [alumnos]);
 
     
-    const [alumnos, setAlumnos] = useState({
+    const [alumno, setAlumno] = useState({
         id: nuevoid,
         lu: '',
         nombre: '',
@@ -25,13 +25,13 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
     
     useEffect(() => {
         if (id) 
-            setAlumnos(alumnos.find(alumno => alumno.id === parseInt(id))); 
+            setAlumno(alumnos.find(alumno => alumno.id === parseInt(id))); 
     }, [id]);
 
 
     const editarAlumnos = (alumno) => {
         const { name, value } = alumno.target;
-        setAlumnos((prev) => ({...prev, [name]: value }));
+        setAlumno((prev) => ({...prev, [name]: value }));
     };
 
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
             alert('El LU ya existe');
         else{
         editarAlumnos(alumnos);
-        setAlumnos({
+        setAlumno({
             id: nuevoid,
             lu: '',
             nombre: '',
@@ -62,14 +62,14 @@ const Nuevo = ({alumnos, editarAlumnos}) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <h2>{id ? 'Editar Alumno' : 'Nuevo Alumno'}</h2>
-                <label>Nombre: <imput type="text" name="nombre" value={alumnos.nombre} onchange={editarAlumnos} required/></label>
-                <label>Apellido: <imput type="text" name="apellido" value={alumnos.apellido} onchange={editarAlumnos} required/></label>
-                <label>Lu: <imput type="text" name="lu" value={alumnos.lu} onchange={editarAlumnos} required/></label>
-                <label>Edad: <imput type="number" name="edad" value={alumnos.edad} onchange={editarAlumnos} required/></label>
-                <label>Curso: <imput type="text" name="curso" value={alumnos.curso} onchange={editarAlumnos} required/></label>
-                <label>Email: <imput type="email" name="email" value={alumnos.email} onchange={editarAlumnos} required/></label>
-                <label>Domicilio: <imput type="text" name="domicilio" value={alumnos.domicilio} onchange={editarAlumnos} required/></label>
-                <label>Telefono: <imput type="tel" name="telefono" value={alumnos.telefono} onchange={editarAlumnos} required/></label>
+                <label>Nombre: <imput type="text" name="nombre" value={alumno.nombre} onchange={editarAlumnos} required/></label>
+                <label>Apellido: <imput type="text" name="apellido" value={alumno.apellido} onchange={editarAlumnos} required/></label>
+                <label>Lu: <imput type="text" name="lu" value={alumno.lu} onchange={editarAlumnos} required/></label>
+                <label>Edad: <imput type="number" name="edad" value={alumno.edad} onchange={editarAlumnos} required/></label>
+                <label>Curso: <imput type="text" name="curso" value={alumno.curso} onchange={editarAlumnos} required/></label>
+                <label>Email: <imput type="email" name="email" value={alumno.email} onchange={editarAlumnos} required/></label>
+                <label>Domicilio: <imput type="text" name="domicilio" value={alumno.domicilio} onchange={editarAlumnos} required/></label>
+                <label>Telefono: <imput type="tel" name="telefono" value={alumno.telefono} onchange={editarAlumnos} required/></label>
                 <div>
                     <button type="submit">Guardar</button>
                     <button><Link to={`/alumnos`}>Atras</Link>    </button>
