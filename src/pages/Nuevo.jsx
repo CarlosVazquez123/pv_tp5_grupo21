@@ -2,8 +2,9 @@ import {React, useState, useEffect} from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 
-const Nuevo = ({alumnos, onChange}) => {
+const Nuevo = ({alumnos, manejarAlumno}) => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const nuevoid = useMemo(() => {
 
         return alumnos.length > 0 ? Math.max(...alumnos.map(a => a.id)) + 1 : 1;
@@ -29,19 +30,19 @@ const Nuevo = ({alumnos, onChange}) => {
     }, [id]);
 
 
-    const onChange = (alumno) => {
-        const { name, value } = alumno.target;
+    const onChange = (e) => {
+        const { name, value } = e.target;
         setAlumno((prev) => ({...prev, [name]: value }));
     };
 
-    const navigate = useNavigate();
-
     const handleSubmit = (alumno) => {
         alumno.preventDefault();
-        if(alumnos.map((alumno) => alumno.lu).includes(alumnos.lu)) 
+
+
+        if(alumnos.includes(alumno.lu)) 
             alert('El LU ya existe');
         else{
-        onChange(alumnos);
+        manejarAlumno(alumno);
         setAlumno({
             id: nuevoid,
             lu: '',
