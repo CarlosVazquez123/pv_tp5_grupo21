@@ -1,0 +1,141 @@
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Estilos generales === */
+body {
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === NavBar === */
+.navbar {
+  background-color: #004080;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* === Home === */
+.home-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* === Lista de Alumnos (tabla o tarjetas) === */
+.alumnos-container {
+  margin-top: 30px;
+}
+
+.alumnos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.alumnos-table th,
+.alumnos-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.alumnos-table th {
+  background-color: #e9ecef;
+}
+
+/* === Botones === */
+.btn {
+  padding: 8px 14px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* === Formulario (Agregar / Editar Alumno) === */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* === Detalle del Alumno === */
+.detalle-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* === Acerca de === */
+.about-container {
+  text-align: center;
+  padding: 40px;
+}

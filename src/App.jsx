@@ -4,7 +4,7 @@ import Menu from './components/Menu.jsx'
 import Home from './pages/Home.jsx'
 import ListaAlumnos from './components/ListaAlumnos.jsx'
 import Perfil from './pages/Perfil.jsx'
-import Nuevo from './pages/Nuevo.jsx'
+import Nuevo from "./pages/Nuevo.jsx";
 import AcercaDe from './pages/AcercaDe.jsx'
 import { useState, useCallback } from 'react'
 
